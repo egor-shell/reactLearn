@@ -1,5 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
-const Message = ({text}) => <h1>{text}</h1>
+export default class Message extends React.Component {
+    static propTypes = {
+        message: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired
+    };
 
-export default Message
+    render() {
+        return <div>
+            <div>{this.props.message}</div>
+            <div>{this.props.author}</div>
+        </div>;
+    }
+}
