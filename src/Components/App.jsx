@@ -39,11 +39,10 @@ export default class App extends React.Component {
     };
     render() {
         console.log('render');
-        return <>
+        return
             <main>
                 <MessageList messages={this.state.messages}/>
                 <SendMessage send={this.send}/>
             </main>
-        </>
     }
 }
