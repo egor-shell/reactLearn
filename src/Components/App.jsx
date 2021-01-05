@@ -4,6 +4,8 @@ import Message from './Message.jsx';
 import MessageList from './MessageList';
 import SendMessage from './SendMessage';
 
+import '../styles/App.css'
+
 export default class App extends React.Component {
     constructor(props){
         super(props);
@@ -18,10 +20,8 @@ export default class App extends React.Component {
 
     componentDidUpdate(){
         console.log('componentWillUpdate');
-        console.log(this.state.messages.length, this.state.messages.length % 2);
-        if(this.state.messages.length % 2 > 0){
-            const timeout = setTimeout(
-                () => {
+        if (this.state.messages.length % 2 === 1){
+            setTimeout(() => {
                     this.setState({messages: [...this.state.messages, {message: 'I do not answer you. I am robot', author: 'Bot'}]});
                     this.setState({timeout});
                 },
@@ -39,10 +39,13 @@ export default class App extends React.Component {
     };
     render() {
         console.log('render');
-        return
+        return(
             <main>
                 <MessageList messages={this.state.messages}/>
-                <SendMessage send={this.send}/>
+                <div className={'textfield'}>
+                    <SendMessage send={this.send}/>
+                </div>
             </main>
+        )
     }
 }

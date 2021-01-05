@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
+import { Button, TextField } from '@material-ui/core'
+
 export default class SendMessage extends React.Component {
     state = {
         message: ''
@@ -14,21 +16,24 @@ export default class SendMessage extends React.Component {
         this.props.send({message: this.state.message, author: 'Me'})
         this.setState({message: ''})
     }
+    handleKeyPress = event => {
+        if(event.key === 'Enter'){
+            this.send()
+        }
+    }
 
     hangleChange = event => this.setState({message: event.target.value})
 
     render() {
         return <>
-            {/* <textarea
-                       value={this.state.message}
-                       onChange={this.handleChange} 
-                    //    fullWidth={true}
-                       multiline={true} 
-                       name={'message'}
-                    />
-            <button onClick={this.send}>Send</button> */}
-            <input type="text" value={this.state.message} onChange={this.hangleChange} name={'message'}></input>
-            <button onClick={this.send}>Send</button>
+            <TextField
+                value={this.state.message} 
+                onChange={this.hangleChange} 
+                name={'message'}
+                onKeyPress={this.handleKeyPress}
+                className={'textfield'}
+            />
+            <Button variant="outlined" onClick={this.send}>Send</Button>
             </>
             
     }

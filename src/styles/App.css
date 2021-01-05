@@ -1,0 +1,15 @@
+main {
+    height: 100%;
+   width: 50%;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+.textfield {
+    display: flex;
+}
+.container_chat {
+    display: flex;
+}
