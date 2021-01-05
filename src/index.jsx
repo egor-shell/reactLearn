@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Layout from './Components/Layout.jsx'
+import App from './Components/App.jsx'
 
 ReactDOM.render(
-  <Layout />,
+  <App />,
   document.getElementById('root')
 );

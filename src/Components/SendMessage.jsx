@@ -30,6 +30,8 @@ export default class SendMessage extends React.Component {
                 value={this.state.message} 
                 onChange={this.hangleChange} 
                 name={'message'}
+                fullWidth={true}
+                multiline={true}
                 onKeyPress={this.handleKeyPress}
                 className={'textfield'}
             />
