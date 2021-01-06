@@ -5,10 +5,13 @@ import Message from './Message.jsx';
 import MessageList from './MessageList';
 import SendMessage from './SendMessage';
 import ChatList from './ChatList'
+import Messages from './Pages/Messages'
 
 import { MuiThemeProvider } from '@material-ui/core';
+import {BrowserRouter, Switch, Route, Link} from 'react-router-dom'
 
 import '../styles/App.css'
+import Chats from './Chats.jsx';
 
 export default class App extends React.Component {
     constructor(props){
@@ -46,31 +49,25 @@ export default class App extends React.Component {
 
     send = objMsg => {
         this.setState({messages: [...this.state.messages, objMsg]});
-    };
+    }
     render() {
         console.log('render');
         return(
-            <main>
-                <Header name={'Чат'} />
-                <div className='container_chat'>
-                {/* <BrowserRouter>
-                            <div className={'container_chat'}>
-                                <ChatList chats={['Чат 1', 'Чат 2', 'Чат3']} />
-                                <Messages />
-                            </div>
-                            <Switch>
-                                <Route path='/' component={Messages}/>
-                            </Switch>
-                        </BrowserRouter> */}
-                    <ChatList chats={['Чат 1', 'Чат 2', 'Чат3']} />
-                    <div className={'main__view'}>
-                        <MessageList messages={this.state.messages}/>
-                        <div className='textfield'>
-                            <SendMessage send={this.send}/>
-                        </div>
-                    </div>
-                </div>
-            </main>
+                <main>
+                    <BrowserRouter>
+                        {/* <nav>
+                            <Link to='/chat/1'>Чат 1</Link>
+                            <Link to='/chat/2'>Чат 2</Link>
+                            <Link to='/chat/3'>Чат 3</Link>
+                            <Link to='/chat/4'>Чат 4</Link>
+                        </nav> */}
+                        <Chats />
+                        {/* <Switch>
+                            <Route exact path='/' component={Messages} />
+                            <Route exact path='/chat/:chatId' render={obj => <Messages chatId={obj.match.params.chatId} />} />
+                        </Switch> */}
+                    </BrowserRouter>
+                </main>
         )
     }
 }
