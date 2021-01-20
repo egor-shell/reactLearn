@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
-
 import { List, ListItem, ListItemText} from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 export default class ChatList extends React.Component{
     static propTypes = {
@@ -11,19 +10,15 @@ export default class ChatList extends React.Component{
     
     render() {
         return <div className={'chatList'}>
-            {/* <List component='nav' aria-label='main mailbox folders'>
+            <List component='nav' aria-label='main mailbox folders'>
                 {this.props.chats.map((number, id) => 
+                    <Link to={'/chat/' + id} key={id}>
                         <ListItem button>
-                        <ListItemText primary={number} />
+                            <ListItemText primary={number}/>
                         </ListItem>
+                    </Link>
                 )}
-            </List> */}
-            <nav>
-                <Link to='/chat/1'>Чат 1</Link>
-                <Link to='/chat/2'>Чат 2</Link>
-                <Link to='/chat/3'>Чат 3</Link>
-                <Link to='/chat/4'>Чат 4</Link>
-            </nav>
+            </List>
         </div>
     }
 }

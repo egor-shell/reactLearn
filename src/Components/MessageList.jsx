@@ -17,11 +17,10 @@ export default class MessageList extends React.Component {
     };
 
     render() {
-        console.log(this.props.messages)
 
         return <>
             <div className='messages'>
-            { this.props.messages.map(({message, author}, id) => <><Message message={message} author={author} key={message.id}/><br/></>) }
+                {this.props.messages.map(({message, author}, id) => <React.Fragment key={'message_' + id}><Message message={message} author={author} /><br/></React.Fragment>) }
             </div>
         </>
     }

@@ -10,10 +10,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './public',
-        historyApiFallBack: {
-          index: 'index.html'
-        }
+        contentBase: './public'
     },
     module: {
         rules: [
