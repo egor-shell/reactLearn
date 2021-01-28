@@ -25,7 +25,7 @@ export default class SendMessage extends React.Component {
     hangleChange = event => this.setState({message: event.target.value})
 
     render() {
-        return <>
+        return <div className='messages__textfield'>
             <TextField
                 value={this.state.message} 
                 onChange={this.hangleChange} 
@@ -36,7 +36,7 @@ export default class SendMessage extends React.Component {
                 className={'textfield'}
             />
             <Button variant="outlined" onClick={this.send}>Send</Button>
-            </>
+            </div>
             
     }
 }
