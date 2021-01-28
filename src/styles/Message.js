@@ -1,6 +1,6 @@
 export default {
     message: {
-        backgroundColor: 'lightblue',
+        backgroundColor: '#273D6F',
         padding: '5px 15px',
         borderRadius: '20px',
         fontSize: '18px',
@@ -8,6 +8,6 @@ export default {
     },
     author: {
         color: 'gray',
-        fontSize: '14px'
+        fontSize: '14px',
     }
 }

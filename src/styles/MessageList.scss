@@ -1,0 +1,10 @@
+.scroll{
+    display: flex;
+    flex-direction: column;
+    background-color: #e2e2e2;
+    border-radius: 20px;
+    max-height: 500px;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: scroll;
+}
