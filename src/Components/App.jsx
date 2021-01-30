@@ -16,14 +16,14 @@ export default class App extends React.Component {
         console.log('render');
 
         return(
-                <main>
-                    <Header name={'Профиль'} />
-                    <div className='main-container'>
-                        <Box minHeight='100%' boxSizing='border-box' alignItems='stretch' display='flex'>
-                            <Router />
-                        </Box>
-                    </div>
-                </main>
+            <main>
+                <Header name={'Профиль'} />
+                <div className='main-container'>
+                    <Box minHeight='100%' boxSizing='border-box' alignItems='stretch' display='flex'>
+                        <Router />
+                    </Box>
+                </div>
+            </main>
         )
     }
 }

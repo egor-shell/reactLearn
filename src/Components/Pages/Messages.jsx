@@ -87,7 +87,7 @@ export default class Messages extends React.Component {
                     </div>
                     <div className='textfield'>
                         <SendMessage classname='messages__send-message' send={this.send}/>
-                </div>
+                    </div>
                 </div>
                 </div>
             </div>

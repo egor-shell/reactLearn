@@ -1,7 +1,7 @@
+const initialState = {
+    messages: []
+};
 
-
-function MessageReducer (state, action) {
-    switch(action.type) {
-        case SEND_MESSAGE:
-    }
-}
+export const messageReducer = (state = initialState, action) => {
+    return state
+};
