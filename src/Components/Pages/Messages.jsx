@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Box, Container, Grid } from '@material-ui/core'
 
 import MessageList from '../MessageList'
 import SendMessage from '../SendMessage'
 import ChatList from '../ChatList'
 
+import { sender } from '../../store/Actions/message'
+
 import '../../styles/Messages.scss'
 
-export default class Messages extends React.Component {
+class Messages extends React.Component {
     state = {
         messages: [],
         chats: {
@@ -63,7 +66,7 @@ export default class Messages extends React.Component {
     }
 
     send = objMsg => {
-        console.log('send')
+        this.props.sender(objMsg)
         const newMesId = this.state.messages.length;
         this.setState({messages: [...this.state.messages, {...objMsg, id: newMesId}]});
         const chats = {...this.state.chats};
@@ -82,7 +85,8 @@ export default class Messages extends React.Component {
                         <h3 className='messages__header-name'>{this.state.chats[this.props.chatId].name}</h3>
                     <div className='messagelist__container'>
                         <div className='messages__view'>
-                            <MessageList messages={this.state.messages.filter((item, id) => this.state.chats[this.props.chatId].messages.includes(id))}/>
+                            <MessageList />
+                            {/* <MessageList messages={this.state.messages.filter((item, id) => this.state.chats[this.props.chatId].messages.includes(id))}/> */}
                         </div>
                     </div>
                     <div className='textfield'>
@@ -94,3 +98,9 @@ export default class Messages extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = {
+    sender
+}
+
+export default connect(null, mapDispatchToProps)(Messages)

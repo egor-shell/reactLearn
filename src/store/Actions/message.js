@@ -1,7 +1,5 @@
 export const SEND_MESSAGE = '@@message//SEND_MESSAGE'
-export const sendMessage = (message, author, chatId) => ({
+export const sender = (message, author, chatId) => ({
     type: SEND_MESSAGE,
-    message,
-    author,
-    chatId
+    payload: message, author, chatId
 })
