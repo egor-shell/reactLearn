@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import Message from '../Components/Message';
 
 const MessageList = ({chatMessages}) => {
-    console.log(chatMessages)
+    console.log(`MessageList mapStateToProps = ${chatMessages}`)
     return <div className='messages__view-outer'>
         {chatMessages.map(({message, author}, id) => <React.Fragment key={'message_' + id}><Message message={message} author={author} /><br/></React.Fragment>) }
     </div>

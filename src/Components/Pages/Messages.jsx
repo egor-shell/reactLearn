@@ -44,7 +44,9 @@ class Messages extends React.Component {
         chatId: 0
     }
 
+    // Ответ бота
     componentDidUpdate(prevProps, prevState){
+        // if(prevState.messages.length < this.state.messages.length && 
         if(prevState.messages.length < this.state.messages.length && 
         this.state.messages[this.state.messages.length - 1].author === 'Me'){
             console.log('componentDidUpdate')
@@ -65,9 +67,10 @@ class Messages extends React.Component {
         this.setState({timeout: null});
     }
 
-    send = objMsg => {
+    send = (objMsg) => {
+        console.log(this.props.chatMessages.length)
         this.props.sender(objMsg)
-        const newMesId = this.state.messages.length;
+        const newMesId = this.props.chatMessages.length;
         this.setState({messages: [...this.state.messages, {...objMsg, id: newMesId}]});
         const chats = {...this.state.chats};
         chats[this.props.chatId].messages.push(newMesId);
@@ -99,8 +102,13 @@ class Messages extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        chatMessages: state.messages.messages
+    }
+}
 const mapDispatchToProps = {
     sender
 }
 
-export default connect(null, mapDispatchToProps)(Messages)
+export default connect(mapStateToProps, mapDispatchToProps)(Messages)
