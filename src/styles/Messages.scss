@@ -1,0 +1,102 @@
+.messages {
+    &__main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color: #f8f1f1;
+        color: white;
+    }
+    &__container {
+        width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+        display: flex;
+        align-items: stretch;
+    }
+    &__container1 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    &__header-name {
+        margin: 0 auto;
+        margin-bottom: 10px;
+        z-index: 2;
+        color: #003300;;
+    }
+
+    &__view {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+
+
+
+
+        &-outer {
+            position: absolute;
+            overflow-y:scroll;
+            border-radius: 20px;
+            // background-color: #e2e2e2;
+            min-height: 100%;
+            max-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 20px;
+
+        }
+        &-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            margin: 0 auto;
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+    }
+    &__textfield {
+        display: flex;
+        width: 100%;
+    }
+}
+.chatlist__container {
+    width: 20%;
+    background-color: #a3d2ca;
+    border-right: rgba($color: #000000, $alpha: 0.3) solid 1px;
+}
+
+.messagelist__container {
+    width: 100%;
+    position: relative;
+    flex-grow: 1;
+}
+.textfield {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.message__item{
+    display: flex;
+    flex-direction: column;
+
+    &-author {
+        text-align: right;
+        font-size: 10px;
+        color: grey;
+    }
+}
