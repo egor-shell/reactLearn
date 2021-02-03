@@ -1,3 +1,4 @@
+// Импорт экшена
 import { SEND_MESSAGE } from "../Actions/message";
 
 const initialState = {
