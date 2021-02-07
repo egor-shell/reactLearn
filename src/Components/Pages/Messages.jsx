@@ -68,7 +68,7 @@ class Messages extends React.Component {
     }
 
     send = (objMsg) => {
-        console.log(this.props.chatMessages.length)
+        console.log(this.props.chatMessages)
         this.props.sender(objMsg)
         const newMesId = this.props.chatMessages.length;
         this.setState({messages: [...this.state.messages, {...objMsg, id: newMesId}]});
